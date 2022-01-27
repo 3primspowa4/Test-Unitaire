@@ -18,7 +18,8 @@ public class ServeurTest {
         //ÉTANT DONNÉ un nouveau serveur
         var serveur = new Serveur();
         //QUAND il prend une commande
-        var commande=new Commande(12);
+        var commande=new Commande();
+        commande.montant=12
         //ALORS son chiffre d'affaires est le montant de celle-ci
         assertEquals(commande.montant,serveur.GetCA());
 
@@ -45,5 +46,26 @@ public class ServeurTest {
         //ALORS cette table apparaît sur la liste des tables libres du restaurant
         assertEquals(false, table.occupe);
 
+    }
+    @Test
+    //scope commande
+    public void listeCommande(){
+        //ÉTANT DONNE un serveur dans un restaurant
+        var serveur = new Serveur();
+        var cuisine = new Cuisine();
+
+        //QUAND il prend une commande de nourriture
+        var commande = new Commande();
+        cuisine.ajoutCommande(commande);
+        //ALORS cette commande apparaît dans la liste de tâches de la cuisine de ce restaurant
+        assertEquals(true, cuisine.commandes.contains(commande));
+    }
+    @Test
+    public void commandeBoisson(){
+        //ÉTANT DONNE un serveur dans un restaurant
+        var serveur = new Serveur();
+        //QUAND il prend une commande de boissons
+
+        //ALORS cette commande n'apparaît pas dans la liste de tâches de la cuisine de ce restaurant
     }
 }
