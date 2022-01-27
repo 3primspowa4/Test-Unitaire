@@ -19,7 +19,7 @@ public class ServeurTest {
         var serveur = new Serveur();
         //QUAND il prend une commande
         var commande=new Commande();
-        commande.montant=12
+        commande.montant=12;
         //ALORS son chiffre d'affaires est le montant de celle-ci
         assertEquals(commande.montant,serveur.GetCA());
 
