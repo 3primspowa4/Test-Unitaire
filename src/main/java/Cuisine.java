@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Cuisine {
     ArrayList<Commande> commandes=new ArrayList<>();
     public void ajoutCommande(Commande commande){
-        commandes.add(commande);
+        if(commande.nourriture==true)
+            commandes.add(commande);
     }
 }
