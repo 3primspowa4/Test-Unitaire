@@ -36,4 +36,6 @@ public class ServeurTest {
         assertEquals(false, table.occupe);
 
     }
+
+
 }
