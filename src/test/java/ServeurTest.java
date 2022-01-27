@@ -13,6 +13,16 @@ public class ServeurTest {
         assertEquals(0, CAs1);
 
     }
+    @Test
+    public void ajoutCAserveur(){
+        //ÉTANT DONNÉ un nouveau serveur
+        var serveur = new Serveur();
+        //QUAND il prend une commande
+        var commande=new Commande(12);
+        //ALORS son chiffre d'affaires est le montant de celle-ci
+        assertEquals(commande.montant,serveur.GetCA());
+
+    }
     //scope installation
     @Test
     public void tableOccupe(){
