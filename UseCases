@@ -65,7 +65,7 @@ SCOPE Epinglage
 	QUAND elle est marquée comme transmise à la gendarmerie
 	ALORS elle ne figure plus dans la liste des commandes à transmettre du restaurant
 
-SCOPE Installation
+SCOPE Installation: FAIT
 	ÉTANT DONNE une table dans un restaurant ayant débuté son service
 	QUAND un client est affecté à une table
 	ALORS cette table n'est plus sur la liste des tables libres du restaurant
@@ -89,7 +89,7 @@ SCOPE Menus
 	QUAND la franchise ajoute un nouveau plat
 	ALORS la carte du restaurant propose le premier plat au prix du restaurant et le second au prix de la franchise
 
-SCOPE Commande
+SCOPE Commande: FAIT
 	ÉTANT DONNE un serveur dans un restaurant
 	QUAND il prend une commande de nourriture
 	ALORS cette commande apparaît dans la liste de tâches de la cuisine de ce restaurant
