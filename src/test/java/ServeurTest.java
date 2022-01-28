@@ -6,7 +6,7 @@ public class ServeurTest {
     @Test
     public void Get_CA_Serveur() {
         //ÉTANT DONNÉ un nouveau serveur
-        Serveur S1 = new Serveur();
+        Serveur S1 = new ServeurBuilder().Build();
         //QUAND on récupére son chiffre d'affaires
         int CAs1 = S1.GetCA();
         //ALORS celui-ci est à 0
@@ -16,7 +16,7 @@ public class ServeurTest {
     @Test
     public void premierCAserveur(){
         //ÉTANT DONNÉ un nouveau serveur
-        var serveur = new Serveur();
+        Serveur serveur = new ServeurBuilder().Build();
         //QUAND il prend une commande
         var commande=new Commande();
         commande.setMontant(12);
@@ -28,7 +28,7 @@ public class ServeurTest {
     @Test
     public void ajoutCAserveur(){
         //ÉTANT DONNÉ un nouveau serveur
-        var serveur = new Serveur();
+        Serveur serveur = new ServeurBuilder().Build();
         //QUAND il prend une commande
         var commande1=new Commande();
         Commande commande2=new Commande();
