@@ -8,7 +8,7 @@ public class CommandeTest {
     public void listeCommande(){
         //ÉTANT DONNE un serveur dans un restaurant
         Serveur serveur = new ServeurBuilder().Build();
-        var cuisine = new Cuisine();
+        Cuisine cuisine = new CuisineBuilder().Build();
 
         //QUAND il prend une commande de nourriture
         Commande commande = new CommandeBuilder().Build();
@@ -20,7 +20,7 @@ public class CommandeTest {
     public void commandeBoisson(){
         //ÉTANT DONNE un serveur dans un restaurant
         Serveur serveur = new ServeurBuilder().Build();
-        var cuisine= new  Cuisine();
+        Cuisine cuisine = new CuisineBuilder().Build();
         Commande commande = new CommandeBuilder().Build();
         //QUAND il prend une commande de boissons
         commande.nourriture=false;
