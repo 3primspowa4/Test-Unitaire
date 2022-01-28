@@ -1,8 +1,8 @@
+import java.util.ArrayList;
+
 public class Menu {
-
-    private Plat plat;
-
-    public Menu() {
-        this.plat = plat;
+    public ArrayList<Plat> lesplats= new ArrayList<>();
+    public Menu(Plat plat) {
+        lesplats.add(plat);
     }
 }
