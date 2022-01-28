@@ -5,10 +5,9 @@ public class Serveur {
     }
     public void ajoutCA(int Ca){
         CA+=Ca;
-
     }
     public void prendCommande(Commande commande){
-
+        CA+=commande.getMontant();
     }
 
 }
