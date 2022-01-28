@@ -8,4 +8,8 @@ public class Plat {
     public void setPrix(int prix) {
         this.prix = prix;
     }
+    public int getPrix() {
+        return this.prix;
+    }
+
 }
