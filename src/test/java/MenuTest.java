@@ -25,13 +25,12 @@ public class MenuTest {
         var plat = new Plat("Frite", 15,true);
         restaurant.ajouterPlat(plat);
         franchise.ajouterPlat(plat);
-
         //QUAND la franchise modifie le prix du plat
         franchise.modifiePrix(plat, 12);
         //ALORS le prix du plat dans le menu du restaurant reste inchangé
         assertNotEquals(12,restaurant.recupererPrixPlat(plat));
     }
-
+    @Test
     public void platADeuxPrix(){
         //ÉTANT DONNE un restaurant appartenant à une franchise et définissant un menu ayant un plat
         var restaurant = new RestaurantBuilder().Build();
@@ -39,9 +38,12 @@ public class MenuTest {
         var plat1 =new Plat("Steak", 20,true);
         var plat2=new Plat("Spaghetti",12,false);
         //QUAND la franchise ajoute un nouveau plat
-        franchise.ajoutMenu(plat1);
+        restaurant.ajouterPlat(plat1);
+        franchise.ajouterPlat(plat2);
 
         //ALORS la carte du restaurant propose le premier plat au prix du restaurant et le second au prix de la franchise
+        assertEquals(20,restaurant.recupererPrixPlat(plat1));
+        //assertEquals(12,);
 
     }
 }
