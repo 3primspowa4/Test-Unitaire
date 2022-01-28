@@ -4,8 +4,13 @@ public class Commande {
     public int date;
     public boolean nonPayee=false;
     public boolean eplinglee=false;
+    public boolean marquee=false;
     public boolean transmise=false;
 
+    public Commande commandeMarquee(){
+        this.marquee= true;
+        return this;
+    }
     public void commandeNonPayee(){
         this.nonPayee = true;
     }
