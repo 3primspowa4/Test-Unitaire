@@ -8,4 +8,7 @@ public class Restaurant {
     public void setStatut(String statut) {
         Statut = statut;
     }
+    public Menu getMenu(Menu menu){
+        return menu;
+    }
 }
