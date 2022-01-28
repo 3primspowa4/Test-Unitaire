@@ -7,7 +7,7 @@ public class TableTest {
     @Test
     public void tableOccupe(){
         //  ÉTANT DONNE une table dans un restaurant ayant débuté son service
-        var table= new Table();
+        Table table=new TableBuilder().Build();
         Client client=new ClientBuilder().Build();
         //  QUAND un client est affecté à une table
         table.clientArrive(client);
@@ -17,7 +17,7 @@ public class TableTest {
     @Test
     public void tableLibre(){
         //ÉTANT DONNE une table occupée par un client
-        var table= new Table();
+        Table table=new TableBuilder().Build();
         Client client=new ClientBuilder().Build();
         table.clientArrive(client);
         //QUAND la table est libérée
