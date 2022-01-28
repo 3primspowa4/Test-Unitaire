@@ -10,7 +10,7 @@ public class MenuTest {
         Franchise F1=new Franchise();
         Plat nuggets=new Plat("nuggets");
         R1.setStatut("Filiale");
-        F1.definirMenu("enfant",nuggets);
+        //F1.definirMenu("enfant",nuggets);
         //QUAND la franchise modifie le prix du plat
         F1.modifiePrix(nuggets,15);
         //ALORS le prix du plat dans le menu du restaurant est celui défini par la franchise
