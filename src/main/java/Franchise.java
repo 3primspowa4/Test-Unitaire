@@ -1,10 +1,12 @@
 public class Franchise {
-    public void definirMenu(String plat) {
-        Menu m1=new Menu(plat);
+
+    public void definirMenu(String nomMenu1,Plat plat) {
+        Menu nomMenu=new Menu(nomMenu1,plat);
+
 
     }
 
-    public void modifiePrix(String nuggets, int i) {
+    public void modifiePrix(Plat plat, int i) {
 
     }
 }
