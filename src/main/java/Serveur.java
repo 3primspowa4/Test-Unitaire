@@ -7,5 +7,8 @@ public class Serveur {
         CA+=Ca;
 
     }
+    public void prendCommande(Commande commande){
+
+    }
 
 }
