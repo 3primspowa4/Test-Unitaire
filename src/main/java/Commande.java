@@ -1,5 +1,5 @@
 public class Commande {
-    public int montant;
+    private int montant;
     public boolean nourriture=true;
     public int date;
     public boolean nonPayee=false;
@@ -24,4 +24,11 @@ public class Commande {
         this.date = 15;
     }
 
+    public int getMontant() {
+        return montant;
+    }
+
+    public void setMontant(int montant) {
+        this.montant = montant;
+    }
 }
