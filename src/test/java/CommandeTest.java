@@ -24,6 +24,7 @@ public class CommandeTest {
         var commande= new Commande();
         //QUAND il prend une commande de boissons
         commande.nourriture=false;
+        serveur.prendCommande(commande);
         cuisine.ajoutCommande(commande);
         //ALORS cette commande n'apparaît pas dans la liste de tâches de la cuisine de ce restaurant
         assertFalse(cuisine.commandes.contains(commande));
