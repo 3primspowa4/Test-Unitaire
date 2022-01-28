@@ -18,7 +18,7 @@ public class ServeurTest {
         //ÉTANT DONNÉ un nouveau serveur
         Serveur serveur = new ServeurBuilder().Build();
         //QUAND il prend une commande
-        var commande=new Commande();
+        Commande commande = new CommandeBuilder().Build();
         commande.setMontant(12);
         serveur.ajoutCA(commande.getMontant());
         //ALORS son chiffre d'affaires est le montant de celle-ci
@@ -30,8 +30,8 @@ public class ServeurTest {
         //ÉTANT DONNÉ un nouveau serveur
         Serveur serveur = new ServeurBuilder().Build();
         //QUAND il prend une commande
-        var commande1=new Commande();
-        Commande commande2=new Commande();
+        Commande commande1 = new CommandeBuilder().Build();
+        Commande commande2 = new CommandeBuilder().Build();
         commande1.setMontant(12);
         commande2.setMontant(24);
         serveur.ajoutCA(commande1.getMontant());
