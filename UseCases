@@ -21,7 +21,7 @@ SCOPE Chiffre d'Affaires
 		CAS(X = 0; X = 1; X = 2; X = 100)
 		CAS(Y = 1.0)
 
-	SCOPE Franchise
+	SCOPE Franchise :FAIT
 		ÉTANT DONNÉ une franchise ayant X restaurants de Y serveurs chacuns
 		QUAND tous les serveurs prennent une commande d'un montant Z
 		ALORS le chiffre d'affaires de la franchise est X * Y * Z
