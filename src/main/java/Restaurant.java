@@ -31,7 +31,7 @@ public class Restaurant {
 
     public ArrayList<Commande> listeMarquee(ArrayList<Commande> liste){
         for (int cpt= 0;cpt<10; cpt++){
-            Commande commande = new Commande();
+            Commande commande = new CommandeBuilder().Build();
             liste.add(commande.commandeMarquee());
         }
 
