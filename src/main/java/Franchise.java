@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Franchise {
-    private int CA;
+    private int CA=0;
     //private ArrayList<Restaurant> listResto;
     ArrayList<Plat> lesplats = new ArrayList<>();
     public void ajoutMenu(Plat plat){
@@ -24,12 +24,12 @@ public class Franchise {
         return result;
     }
 
-   /* public int getCA(Restaurant r1) {
-        ArrayList<Serveur> listServer=r1.getServeurs();
-        for (Serveur s:listServer) {
-            s.getCommande().getMontant();
-        }
-       CA=listServer.size()*listServer.
+
+    public int getCA() {
         return CA;
-    }*/
+    }
+
+    public void setCA(int CA) {
+        this.CA += CA;
+    }
 }
