@@ -6,12 +6,18 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Restaurant {
+    private Cuisine cuisine;
     private String Statut;
     private ArrayList<Serveur> Serveurs;
+    private ArrayList<Commande> Commandes;
     private ArrayList<Table> tablesOccupes=new ArrayList<>();
 
     public Restaurant(ArrayList<Serveur> serveurs) {
         Serveurs = serveurs;
+    }
+
+    public void setCuisine(Cuisine cuisine) {
+        this.cuisine = cuisine;
     }
 
     public ArrayList<Serveur> getServeurs() {
@@ -23,8 +29,11 @@ public class Restaurant {
     public String getStatut() {
         return Statut;
     }
-    public void AddServeur(Serveur s){
+    public void AjoutServeur(Serveur s){
         Serveurs.add(s);
+    }
+    public void AjoutCommande(Commande c){
+        Commandes.add(c);
     }
     public void setStatut(String statut) {
         Statut = statut;
@@ -67,5 +76,9 @@ public class Restaurant {
     }
 
     public void debuterService() {
+    }
+
+    public Cuisine getCuisine() {
+        return cuisine;
     }
 }
