@@ -13,11 +13,11 @@ public class CommandeTest {
     //scope commande
     public void listeCommande() {
         //ÉTANT DONNE un serveur dans un restaurant
-        var serveur = new Serveur();
-        var cuisine = new Cuisine();
+
+        Cuisine cuisine = new CuisineBuilder().Build();
 
         //QUAND il prend une commande de nourriture
-        var commande = new Commande();
+        Commande commande = new CommandeBuilder().Build();
         cuisine.ajoutCommande(commande);
         //ALORS cette commande apparaît dans la liste de tâches de la cuisine de ce restaurant
         assertTrue(cuisine.commandes.contains(commande));
@@ -26,9 +26,8 @@ public class CommandeTest {
     @Test
     public void commandeBoisson() {
         //ÉTANT DONNE un serveur dans un restaurant
-        var serveur = new Serveur();
-        var cuisine = new Cuisine();
-        var commande = new Commande();
+        Cuisine cuisine = new CuisineBuilder().Build();
+        Commande commande = new CommandeBuilder().Build();
         //QUAND il prend une commande de boissons
         commande.setNourriture(false);
         cuisine.ajoutCommande(commande);
@@ -39,7 +38,7 @@ public class CommandeTest {
     @Test
     public void epingleNonPayee() {
         // ÉTANT DONNE un serveur ayant pris une commande
-        Commande commande = new Commande();
+        Commande commande = new CommandeBuilder().Build();
         //QUAND il la déclare comme non-payée
         commande.setNonPayee(true);
         //ALORS cette commande est marquée comme épinglée
@@ -50,7 +49,7 @@ public class CommandeTest {
     @Test
     public void epingleNonPayeeDelaiDepassee() {
         //ÉTANT DONNE un serveur ayant épinglé une commande
-        Commande commande = new Commande();
+        Commande commande = new CommandeBuilder().Build();
         commande.setEplinglee(true);
         //QUAND elle date d'il y a au moins 15 jours
         commande.dateAttente();
@@ -66,8 +65,8 @@ public class CommandeTest {
 
         //ÉTANT DONNE une commande à transmettre gendarmerie
         ArrayList<Commande> liste = new ArrayList<>();
-        ArrayList<Serveur> serveurs= new ArrayList<>();
-        Restaurant restaurant = new Restaurant(serveurs);
+
+        Restaurant restaurant = new RestaurantBuilder().Build();
         liste = restaurant.listeMarquee(liste);
 
         //QUAND on consulte la liste des commandes à transmettre du restaurant
@@ -81,7 +80,7 @@ public class CommandeTest {
     @Test
     public void listeCommandeGendarmerieTransmise(){
         //ÉTANT DONNE une commande à transmettre gendarmerie
-            Commande commande =new Commande();
+            Commande commande =new CommandeBuilder().Build();
         //QUAND elle est marquée comme transmise à la gendarmerie
             commande.setTransmise(true);
         //ALORS elle ne figure plus dans la liste des commandes à transmettre du restaurant
