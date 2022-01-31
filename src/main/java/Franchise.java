@@ -24,7 +24,12 @@ public class Franchise {
         return result;
     }
 
-    public int getCA() {
+   /* public int getCA(Restaurant r1) {
+        ArrayList<Serveur> listServer=r1.getServeurs();
+        for (Serveur s:listServer) {
+            s.getCommande().getMontant();
+        }
+       CA=listServer.size()*listServer.
         return CA;
-    }
+    }*/
 }
