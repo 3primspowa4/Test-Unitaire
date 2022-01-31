@@ -25,7 +25,7 @@ public class MenuTest {
         Franchise franchise = new FranchiseBuilder().Build();
         Menu menu = new MenuBuilder().Build();
         //ET une meme franchise définissant un menu ayant le même plat
-        Plat plat = new Plat("Frite", 15,false);
+        Plat plat = new PlatBuilder().avecParametres("Frite", 15,false).Build();;
         menu.ajoutPlat(plat);
         //QUAND la franchise modifie le prix du plat
         franchise.modifiePrix(plat, 12);
@@ -35,11 +35,11 @@ public class MenuTest {
     @Test
     public void platADeuxPrix(){
         //ÉTANT DONNE un restaurant appartenant à une franchise et définissant un menu ayant un plat
-        var restaurant = new RestaurantBuilder().Build();
-        var franchise = new Franchise();
-        var plat1 =new Plat("Steak", 20,true);
-        var plat2=new Plat("Spaghetti",12,false);
-        var menu = new Menu();
+        Restaurant restaurant = new RestaurantBuilder().Build();
+        Franchise franchise = new FranchiseBuilder().Build();
+        Plat plat1 =new PlatBuilder().avecParametres("Steak", 20,true).Build();
+        Plat plat2=new PlatBuilder().avecParametres("Spaghetti",12,false).Build();
+        Menu menu = new Menu();
         //QUAND la franchise ajoute un nouveau plat
         menu.ajoutPlat(plat1);
         menu.ajoutPlat(plat2);
