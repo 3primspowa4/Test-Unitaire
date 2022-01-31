@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Serveur {
     private int CA;
-    private ArrayList<Commande> commande;
+    private Commande commande;
 
 
 
@@ -10,13 +10,13 @@ public class Serveur {
         return CA;
     }
 
-    public ArrayList<Commande> getCommande() {
+    public Commande getCommande() {
         return commande;
     }
 
     public void prendCommande(Commande commande){
         CA+=commande.getMontant();
-        this.commande.add(commande);
+        this.commande=commande;
     }
 
 

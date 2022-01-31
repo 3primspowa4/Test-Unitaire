@@ -42,7 +42,7 @@ public class MenuTest {
         Franchise franchise = new FranchiseBuilder().Build();
         Plat plat1 =new PlatBuilder().avecParametres("Steak", 20,true).Build();
         Plat plat2=new PlatBuilder().avecParametres("Spaghetti",12,false).Build();
-        Menu menu = new Menu();
+        Menu menu = new MenuBuilder().Build();
         //QUAND la franchise ajoute un nouveau plat
         menu.ajoutPlat(plat1);
         menu.ajoutPlat(plat2);
