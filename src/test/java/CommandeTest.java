@@ -29,7 +29,7 @@ public class CommandeTest {
         var cuisine = new Cuisine();
         var commande = new Commande();
         //QUAND il prend une commande de boissons
-        commande.nourriture = false;
+        commande.setNourriture(false);
         cuisine.ajoutCommande(commande);
         //ALORS cette commande n'apparaît pas dans la liste de tâches de la cuisine de ce restaurant
         assertFalse(cuisine.commandes.contains(commande));
@@ -40,24 +40,24 @@ public class CommandeTest {
         // ÉTANT DONNE un serveur ayant pris une commande
         Commande commande = new Commande();
         //QUAND il la déclare comme non-payée
-        commande.commandeNonPayee();
+        commande.setNonPayee(true);
         //ALORS cette commande est marquée comme épinglée
-        commande.commandeEpinglee();
-        assertEquals(commande.nonPayee, commande.eplinglee);
+        commande.setEplinglee(true);
+        assertEquals(commande.isNonPayee(), commande.isEplinglee());
     }
 
     @Test
     public void epingleNonPayeeDelaiDepassee() {
         //ÉTANT DONNE un serveur ayant épinglé une commande
         Commande commande = new Commande();
-        commande.commandeEpinglee();
+        commande.setEplinglee(true);
         //QUAND elle date d'il y a au moins 15 jours
         commande.dateAttente();
         //ALORS cette commande est marquée comme à transmettre gendarmerie
-        assertTrue(commande.eplinglee);
-        assertEquals(commande.date, 15);
+        assertTrue(commande.isEplinglee());
+        assertEquals(commande.getDate(), 15);
         commande = commande.commandeMarquee();
-        assertTrue(commande.marquee);
+        assertTrue(commande.isMarquee());
     }
 
     @Test
@@ -65,13 +65,14 @@ public class CommandeTest {
 
         //ÉTANT DONNE une commande à transmettre gendarmerie
         ArrayList<Commande> liste = new ArrayList<>();
-        Restaurant restaurant = new Restaurant();
+        ArrayList<Serveur> serveurs= new ArrayList<>();
+        Restaurant restaurant = new Restaurant(serveurs);
         liste = restaurant.listeMarquee(liste);
 
         //QUAND on consulte la liste des commandes à transmettre du restaurant
         for (Commande value : liste) {
             //ALORS elle y figure
-            assertTrue(value.marquee);
+            assertTrue(value.isMarquee());
         }
 
 
@@ -81,10 +82,11 @@ public class CommandeTest {
         //ÉTANT DONNE une commande à transmettre gendarmerie
             Commande commande =new Commande();
         //QUAND elle est marquée comme transmise à la gendarmerie
-            commande.commandeTansmiseGendarmerie();
+            commande.setTransmise(true);
         //ALORS elle ne figure plus dans la liste des commandes à transmettre du restaurant
-        commande.transmise = false;
-        assertFalse(commande.eplinglee);
-        assertFalse(commande.marquee);
+        commande.setEplinglee(false);
+        commande.setMarquee(false);
+        assertFalse(commande.isEplinglee());
+        assertFalse(commande.isMarquee());
     }
 }
