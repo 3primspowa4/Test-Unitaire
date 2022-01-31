@@ -74,7 +74,7 @@ SCOPE Installation: FAIT
 	QUAND la table est libérée
 	ALORS cette table appraît sur la liste des tables libres du restaurant
 
-SCOPE Menus
+SCOPE Menus: FAIT
 	ÉTANT DONNE un restaurant ayant le statut de filiale d'une franchise
 	ET une franchise définissant un menu ayant un plat
 	QUAND la franchise modifie le prix du plat
