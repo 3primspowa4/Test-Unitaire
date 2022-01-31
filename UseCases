@@ -1,6 +1,6 @@
 SCOPE Chiffre d'Affaires
 
-	SCOPE Serveur
+	SCOPE Serveur: FAIT
 
 		ÉTANT DONNÉ un nouveau serveur
 		QUAND on récupére son chiffre d'affaires
@@ -14,7 +14,7 @@ SCOPE Chiffre d'Affaires
 		QUAND il prend une nouvelle commande
 		ALORS son chiffre d'affaires est la somme des deux commandes
 
-	SCOPE Restaurant
+	SCOPE Restaurant: FAIT
 		ÉTANT DONNÉ un restaurant ayant X serveurs
 		QUAND tous les serveurs prennent une commande d'un montant Y
 		ALORS le chiffre d'affaires de la franchise est X * Y
