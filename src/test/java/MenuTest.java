@@ -7,9 +7,9 @@ public class MenuTest {
         // ÉTANT DONNE un restaurant ayant le statut de filiale d'une franchise
         //ET une franchise définissant un menu ayant un plat
         Restaurant R1=new RestaurantBuilder().Build();
-        Franchise F1=new Franchise();
-        Plat nuggets=new Plat("nuggets", 10, true);
-        var menu = new Menu();
+        Franchise F1=new FranchiseBuilder().Build();
+        Plat nuggets=new PlatBuilder().Build();
+        Menu menu = new MenuBuilder().Build();
         R1.setStatut("Filiale");
         //F1.definirMenu("enfant",nuggets);
         //QUAND la franchise modifie le prix du plat
@@ -22,10 +22,10 @@ public class MenuTest {
     public void modificationPrixPlatFranchise(){
         //ÉTANT DONNE un restaurant appartenant à une franchise et définissant un menu ayant un plat
         Restaurant restaurant=new RestaurantBuilder().Build();
-        var franchise = new Franchise();
-        var menu = new Menu();
+        Franchise franchise = new FranchiseBuilder().Build();
+        Menu menu = new MenuBuilder().Build();
         //ET une meme franchise définissant un menu ayant le même plat
-        var plat = new Plat("Frite", 15,false);
+        Plat plat = new Plat("Frite", 15,false);
         menu.ajoutPlat(plat);
         //QUAND la franchise modifie le prix du plat
         franchise.modifiePrix(plat, 12);
