@@ -1,8 +1,5 @@
-
 import org.junit.jupiter.api.Test;
-
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
 
 public class MenuTest {
     @Test
@@ -19,7 +16,7 @@ public class MenuTest {
         F1.modifiePrix(nuggets,15);
         menu.ajoutPlat(nuggets);
         //ALORS le prix du plat dans le menu du restaurant est celui défini par la franchise
-        assertEquals(15, menu.voirPrix(0));
+        assertThat(15).isEqualTo(menu.voirPrix(0));
     }
     @Test
     public void modificationPrixPlatFranchise(){
@@ -33,7 +30,7 @@ public class MenuTest {
         //QUAND la franchise modifie le prix du plat
         franchise.modifiePrix(plat, 12);
         //ALORS le prix du plat dans le menu du restaurant reste inchangé
-        assertNotEquals(12,menu.voirPrix(0));
+        assertThat(12).isNotEqualTo(menu.voirPrix(0));
     }
     @Test
     public void platADeuxPrix(){
@@ -47,7 +44,7 @@ public class MenuTest {
         menu.ajoutPlat(plat1);
         menu.ajoutPlat(plat2);
         //ALORS la carte du restaurant propose le premier plat au prix du restaurant et le second au prix de la franchise
-        assertEquals(20,menu.voirPrix(0));
-        assertEquals(12,menu.voirPrix(1));
+        assertThat(20).isEqualTo(menu.voirPrix(0));
+        assertThat(12).isEqualTo(menu.voirPrix(1));
     }
 }

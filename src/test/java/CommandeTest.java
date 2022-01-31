@@ -1,5 +1,7 @@
 
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -20,7 +22,7 @@ public class CommandeTest {
         Commande commande = new CommandeBuilder().Build();
         cuisine.ajoutCommande(commande);
         //ALORS cette commande apparaît dans la liste de tâches de la cuisine de ce restaurant
-        assertTrue(cuisine.commandes.contains(commande));
+        assertThat(cuisine.commandes.contains(commande)).isTrue();
     }
 
     @Test
@@ -32,7 +34,7 @@ public class CommandeTest {
         commande.setNourriture(false);
         cuisine.ajoutCommande(commande);
         //ALORS cette commande n'apparaît pas dans la liste de tâches de la cuisine de ce restaurant
-        assertFalse(cuisine.commandes.contains(commande));
+        assertThat(cuisine.commandes.contains(commande)).isFalse();
     }
 
     @Test
@@ -43,7 +45,7 @@ public class CommandeTest {
         commande.setNonPayee(true);
         //ALORS cette commande est marquée comme épinglée
         commande.setEplinglee(true);
-        assertEquals(commande.isNonPayee(), commande.isEplinglee());
+        assertThat(commande.isNonPayee()).isEqualTo(commande.isEplinglee());
     }
 
     @Test
@@ -57,7 +59,7 @@ public class CommandeTest {
         assertTrue(commande.isEplinglee());
         assertEquals(commande.getDate(), 15);
         commande = commande.commandeMarquee();
-        assertTrue(commande.isMarquee());
+        assertThat(commande.isMarquee()).isTrue();
     }
 
     @Test
@@ -72,7 +74,7 @@ public class CommandeTest {
         //QUAND on consulte la liste des commandes à transmettre du restaurant
         for (Commande value : liste) {
             //ALORS elle y figure
-            assertTrue(value.isMarquee());
+            assertThat(value.isMarquee()).isTrue();
         }
 
 
@@ -86,7 +88,7 @@ public class CommandeTest {
         //ALORS elle ne figure plus dans la liste des commandes à transmettre du restaurant
         commande.setEplinglee(false);
         commande.setMarquee(false);
-        assertFalse(commande.isEplinglee());
-        assertFalse(commande.isMarquee());
+        assertThat(commande.isEplinglee()).isFalse();
+        assertThat(commande.isMarquee()).isFalse();
     }
 }

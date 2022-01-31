@@ -2,8 +2,13 @@ import java.util.ArrayList;
 
 public class RestaurantBuilder {
     ArrayList<Serveur> Serveurs= new ArrayList<>();
+    private boolean ayantCommenceLeService =false;
     public Restaurant Build(){
-        return new Restaurant(Serveurs);
+        Restaurant rest=new Restaurant(Serveurs);
+        if (ayantCommenceLeService){
+            rest.debuterService();
+        }
+        return rest;
     }
 
     public RestaurantBuilder avecListeServeur(int nb){
@@ -11,5 +16,9 @@ public class RestaurantBuilder {
           Serveurs.add(new ServeurBuilder().Build());
       }
       return this;
+    }
+    public RestaurantBuilder AyantDebuteLeService(){
+        ayantCommenceLeService=true;
+        return this;
     }
 }
