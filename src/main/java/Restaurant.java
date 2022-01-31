@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Restaurant {
     private String Statut;
     private ArrayList<Serveur> Serveurs;
+    private ArrayList<Table> tablesOccupes=new ArrayList<>();
 
     public Restaurant(ArrayList<Serveur> serveurs) {
         Serveurs = serveurs;
@@ -49,5 +50,19 @@ public class Restaurant {
             }
         }
         return result;
+    }
+
+    public ArrayList<Table> getTablesOccupes() {
+        return tablesOccupes;
+    }
+
+    public void setTablesOccupes(ArrayList<Table> tablesOccupes) {
+        this.tablesOccupes = tablesOccupes;
+    }
+    public  void tableOccupe(Table table){
+        this.tablesOccupes.add(table);
+    }
+    public void tableLibre(Table table){
+        tablesOccupes.remove(table);
     }
 }
