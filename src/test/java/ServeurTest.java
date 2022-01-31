@@ -1,17 +1,21 @@
-import org.junit.Assert;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+
+import  strikt.api.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static strikt.assertions.*;
+
+
 
 public class ServeurTest {
     @Test
-
     public void Get_CA_Serveur() {
         //ÉTANT DONNÉ un nouveau serveur
         Serveur S1 = new Serveur();
         //QUAND on récupére son chiffre d'affaires
         int CAs1 = S1.GetCA();
         //ALORS celui-ci est à 0
-        assertEquals(0, CAs1);
+        expectThat(0).isEqualTo(CAs1);
 
     }
     @Test
@@ -20,10 +24,10 @@ public class ServeurTest {
         var serveur = new Serveur();
         //QUAND il prend une commande
         var commande=new Commande();
-        commande.montant=12;
-        serveur.CA= commande.montant;
+        commande.setMontant(12);
+        serveur.prendCommande(commande);
         //ALORS son chiffre d'affaires est le montant de celle-ci
-        assertEquals(commande.montant,serveur.GetCA());
+        assertEquals(commande.getMontant(),serveur.GetCA());
 
     }
 }
