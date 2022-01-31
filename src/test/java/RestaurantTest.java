@@ -1,9 +1,8 @@
-import org.junit.Assert.*;
-import org.junit.Test;
 
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 import java.security.cert.TrustAnchor;
 
-import static org.junit.Assert.*;
 public class RestaurantTest {
     @Test
     public void CA_resto(){

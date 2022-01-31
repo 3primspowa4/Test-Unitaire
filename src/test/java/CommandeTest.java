@@ -1,11 +1,12 @@
-import org.junit.Test;
-import org.junit.runners.Parameterized;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-import static org.junit.Assert.*;
+
 
 public class CommandeTest {
     @Test
