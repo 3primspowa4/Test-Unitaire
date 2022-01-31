@@ -13,9 +13,6 @@ public class Franchise {
             plat.setPrixrestaurant(i);
         }
     }
-    public void ajouterPlat(Plat plat){
-        lesplats.add(plat);
-    }
     public int recupererPrixPlat(Plat plat){
         int result=0;
         for (Plat p : lesplats) {
