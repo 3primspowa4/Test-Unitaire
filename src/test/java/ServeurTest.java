@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ServeurTest {
+public class  ServeurTest {
     @Test
     public void Get_CA_Serveur() {
         //ÉTANT DONNÉ un nouveau serveur
