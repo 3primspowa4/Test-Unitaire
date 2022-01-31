@@ -33,7 +33,7 @@ public class Restaurant {
         Menu nomMenu=new Menu(nomMenu1,plat);
     }*/
     public void ajouterPlat(Plat plat){
-        plat.setCreerParLaFranchise(false);
+
         lesmenus.add(plat);
     }
     public int recupererPrixPlat(Plat plat){

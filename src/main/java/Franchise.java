@@ -5,7 +5,7 @@ public class Franchise {
     //private ArrayList<Restaurant> listResto;
     ArrayList<Plat> lesplats = new ArrayList<>();
     public void ajoutMenu(Plat plat){
-        var menu = new Menu(plat);
+        var menu = new Menu();
     }
     public void modifiePrix(Plat plat, int i) {
         plat.setPrixfranchise(i);

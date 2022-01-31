@@ -37,13 +37,15 @@ public class MenuTest {
         var franchise = new Franchise();
         var plat1 =new Plat("Steak", 20,true);
         var plat2=new Plat("Spaghetti",12,false);
+        var menu = new Menu();
+        menu.ajoutPlat(plat1);
+        menu.ajoutPlat(plat2);
         //QUAND la franchise ajoute un nouveau plat
         restaurant.ajouterPlat(plat1);
         franchise.ajouterPlat(plat2);
 
         //ALORS la carte du restaurant propose le premier plat au prix du restaurant et le second au prix de la franchise
-        assertEquals(20,restaurant.recupererPrixPlat(plat1));
-        //assertEquals(12,);
-
+        assertEquals(20,menu.voirPrix(0));
+        assertEquals(12,menu.voirPrix(1));
     }
 }
