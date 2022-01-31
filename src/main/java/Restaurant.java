@@ -65,4 +65,7 @@ public class Restaurant {
     public void tableLibre(Table table){
         tablesOccupes.remove(table);
     }
+
+    public void debuterService() {
+    }
 }
