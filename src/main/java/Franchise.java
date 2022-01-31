@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Franchise {
     private int CA=0;
-    //private ArrayList<Restaurant> listResto;
+    private ArrayList<Restaurant> listResto;
     ArrayList<Plat> lesplats = new ArrayList<>();
     public void ajoutMenu(Plat plat){
         var menu = new Menu();
