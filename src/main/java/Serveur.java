@@ -18,6 +18,4 @@ public class Serveur {
         CA+=commande.getMontant();
         this.commande=commande;
     }
-
-
 }

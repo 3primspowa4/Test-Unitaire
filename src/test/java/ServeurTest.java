@@ -78,7 +78,8 @@ public class ServeurTest {
     @Test
     public void commandeBoisson(){
         //ÉTANT DONNE un serveur dans un restaurant
-
+        Serveur serveur= new ServeurBuilder().Build();
+        var commande= new CommandeBuilder().Build();
         //QUAND il prend une commande de boissons
 
         //ALORS cette commande n'apparaît pas dans la liste de tâches de la cuisine de ce restaurant
