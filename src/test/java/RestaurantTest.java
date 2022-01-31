@@ -19,7 +19,6 @@ public class RestaurantTest {
         C1.setMontant(y);
 //	QUAND tous les serveurs prennent une commande d'un montant Y
         for (Serveur s1:restaurant.getServeurs()) {
-            //s1.prendCommande(C1);
             F1.setCA(C1.getMontant());
         }
 //	ALORS le chiffre d'affaires de la franchise est X * Y

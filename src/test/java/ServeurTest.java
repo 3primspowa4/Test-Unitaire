@@ -1,8 +1,6 @@
-
 import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
 
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class  ServeurTest {
     @Test
@@ -12,8 +10,7 @@ public class  ServeurTest {
         //QUAND on récupére son chiffre d'affaires
         int CAs1 = S1.GetCA();
         //ALORS celui-ci est à 0
-        assertEquals(0, CAs1);
-
+        assertThat(0).isEqualTo(CAs1);
     }
     @Test
     public void ajoutCAserveur(){
@@ -24,8 +21,7 @@ public class  ServeurTest {
         commande.setMontant(12);
         serveur.prendCommande(commande);
         //ALORS son chiffre d'affaires est le montant de celle-ci
-        assertEquals(commande.getMontant(),serveur.GetCA());
-
+        assertThat(commande.getMontant()).isEqualTo(serveur.GetCA());
     }
     @Test
     public void ajoutPlusieursCAserveur(){
@@ -34,12 +30,10 @@ public class  ServeurTest {
         //QUAND il prend une nouvelle commande
         Commande commande1=new CommandeBuilder().avecMontant(12).Build();
         Commande commande2=new CommandeBuilder().avecMontant(24).Build();
-
         serveur.prendCommande(commande1);
         serveur.prendCommande(commande2);
         //ALORS son chiffre d'affaires est la somme des deux commandes
-
-        assertEquals(36,serveur.GetCA());
+        assertThat(36).isEqualTo(serveur.GetCA());
 
     }
 }

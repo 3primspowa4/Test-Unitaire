@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.assertj.core.api.Assertions.*;
+
 
 public class TableTest {
     //scope installation
@@ -11,7 +13,7 @@ public class TableTest {
         //  QUAND un client est affecté à une table
         table.clientArrive(client);
         //  ALORS cette table n'est plus sur la liste des tables libres du restaurant
-        assertTrue( table.occupe);
+        assertThat(table.occupe).isTrue();
     }
     @Test
     public void tableLibre(){
@@ -22,7 +24,7 @@ public class TableTest {
         //QUAND la table est libérée
         table.clientPart();
         //ALORS cette table apparaît sur la liste des tables libres du restaurant
-        assertFalse(table.occupe);
+        assertThat(table.occupe).isFalse();
 
     }
 }
