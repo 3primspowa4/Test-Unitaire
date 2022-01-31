@@ -1,6 +1,8 @@
-import org.junit.Assert;
-import org.junit.Test;
-import static org.junit.Assert.*;
+
+import org.junit.jupiter.api.Test;
+
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ServeurTest {
     @Test
@@ -19,10 +21,10 @@ public class ServeurTest {
         var serveur = new Serveur();
         //QUAND il prend une commande
         var commande=new Commande();
-        commande.montant=12;
-        serveur.CA= commande.montant;
+        commande.setMontant(12);
+        serveur.prendCommande(commande);
         //ALORS son chiffre d'affaires est le montant de celle-ci
-        assertEquals(commande.montant,serveur.GetCA());
+        assertEquals(commande.getMontant(),serveur.GetCA());
 
     }
 }
