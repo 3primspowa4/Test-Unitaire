@@ -11,9 +11,12 @@ public class Restaurant {
     private ArrayList<Serveur> Serveurs;
     private ArrayList<Commande> Commandes;
     private ArrayList<Table> tablesOccupes=new ArrayList<>();
+    private ArrayList<Serveur> lesServeurs= new ArrayList<>();
+
 
     public Restaurant(ArrayList<Serveur> serveurs) {
         Serveurs = serveurs;
+
     }
 
     public void setCuisine(Cuisine cuisine) {
@@ -80,5 +83,14 @@ public class Restaurant {
 
     public Cuisine getCuisine() {
         return cuisine;
+    }
+
+    public ArrayList<Serveur> getLesServeurs() {
+        return lesServeurs;
+    }
+
+    public void ajoutServeur(Serveur serveur) {
+        serveur.setRestaurant(this);
+        this.lesServeurs.add(serveur);
     }
 }

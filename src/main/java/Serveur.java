@@ -2,7 +2,8 @@ import java.util.ArrayList;
 
 public class Serveur {
     private int CA;
-    private Commande commande;
+    private ArrayList<Commande> lesCommandes= new ArrayList<>();
+    private Restaurant restaurant;
 
 
 
@@ -10,12 +11,19 @@ public class Serveur {
         return CA;
     }
 
-    public Commande getCommande() {
-        return commande;
-    }
 
     public void prendCommande(Commande commande){
         CA+=commande.getMontant();
-        this.commande=commande;
+        restaurant.getCuisine().ajoutCommande(commande);
+        this.lesCommandes.add(commande);
+
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
     }
 }

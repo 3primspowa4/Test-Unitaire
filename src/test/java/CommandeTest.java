@@ -1,9 +1,6 @@
-
 import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -15,19 +12,16 @@ public class CommandeTest {
     //scope commande
     public void listeCommande() {
         //ÉTANT DONNE un serveur dans un restaurant
-        Serveur serveur=new ServeurBuilder().Build();
-        Restaurant resto=new RestaurantBuilder().AvecCuisine().Build();
-        resto.AjoutServeur(serveur);
-
-        //QUAND il prend une commande de nourriture
-
-
+        Cuisine cuisine = new CuisineBuilder().Build();
+        var restaurant = new RestaurantBuilder().Build();
+        var serveur= new ServeurBuilder().Build();
         Commande commande = new CommandeBuilder().Build();
+        restaurant.setCuisine(cuisine);
+        restaurant.ajoutServeur(serveur);
+        //QUAND il prend une commande de nourriture
         serveur.prendCommande(commande);
-
-
         //ALORS cette commande apparaît dans la liste de tâches de la cuisine de ce restaurant
-        assertThat(resto.getCuisine().commandes.contains(commande)).isTrue();
+        assertThat(cuisine.commandes.contains(commande)).isTrue();
     }
 
     @Test
