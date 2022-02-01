@@ -12,6 +12,23 @@ public class CommandeTest {
     //scope commande
     public void listeCommande() {
         //ÉTANT DONNE un serveur dans un restaurant
+        Serveur serveur=new ServeurBuilder().Build();
+        Restaurant resto=new RestaurantBuilder().AvecCuisine().Build();
+        resto.AjoutServeur(serveur);
+
+        //QUAND il prend une commande de nourriture
+
+
+        Commande commande = new CommandeBuilder().Build();
+        serveur.prendCommande(commande);
+
+
+        //ALORS cette commande apparaît dans la liste de tâches de la cuisine de ce restaurant
+        assertThat(resto.getCuisine().commandes.contains(commande)).isTrue();
+    }
+    //TODO refactor
+    public void listeCommande2() {
+        //ÉTANT DONNE un serveur dans un restaurant
         Cuisine cuisine = new CuisineBuilder().Build();
         var restaurant = new RestaurantBuilder().Build();
         var serveur= new ServeurBuilder().Build();
