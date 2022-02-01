@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import java.util.ArrayList;
 
@@ -11,21 +7,29 @@ public class Restaurant {
     private ArrayList<Serveur> Serveurs;
     private ArrayList<Commande> Commandes;
     private ArrayList<Table> tablesOccupes=new ArrayList<>();
-    private ArrayList<Serveur> lesServeurs= new ArrayList<>();
+
+    private ArrayList<Table> listeTables;
 
 
-    public Restaurant(ArrayList<Serveur> serveurs) {
+    public Restaurant(ArrayList<Serveur> serveurs,ArrayList<Table> tables) {
         Serveurs = serveurs;
+        listeTables=tables;
+    }
 
+    //TODO
+    public ArrayList<Serveur> getServeurs() {
+        return Serveurs;
     }
 
     public void setCuisine(Cuisine cuisine) {
         this.cuisine = cuisine;
     }
+    //TODO
+    public ArrayList<Table> getTables() {
+       return listeTables;
 
-    public ArrayList<Serveur> getServeurs() {
-        return Serveurs;
     }
+
     public ArrayList<Plat> lesmenus= new ArrayList<>();
 
 
@@ -86,12 +90,4 @@ public class Restaurant {
         return cuisine;
     }
 
-    public ArrayList<Serveur> getLesServeurs() {
-        return lesServeurs;
-    }
-
-    public void ajoutServeur(Serveur serveur) {
-        serveur.setRestaurant(this);
-        this.lesServeurs.add(serveur);
-    }
 }
