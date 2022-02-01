@@ -97,3 +97,7 @@ SCOPE Commande: FAIT
 	ÉTANT DONNE un serveur dans un restaurant
 	QUAND il prend une commande de boissons
 	ALORS cette commande n'apparaît pas dans la liste de tâches de la cuisine de ce restaurant
+
+
+		Choisir un scope et realisé un test de recette, d'integration(avec fausse bdd de votre choix), des tests systemes et unitaire
+    	dans le readme ecrivez, ce que vous pensez d'une telle stratégie ET comment vous auriez testé ce code
