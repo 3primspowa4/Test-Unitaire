@@ -40,5 +40,4 @@ public class TableTest {
         //ALORS cette table apparaît sur la liste des tables libres du restaurant
         assertThat(restaurant.getTablesOccupes()).doesNotContain(table);
     }
-
 }
