@@ -53,6 +53,7 @@ public class Restaurant {
     }
     public void AjoutServeur(Serveur s){
         Serveurs.add(s);
+        s.setRestaurant(this);
     }
     public void AjoutCommande(Commande c){
         Commandes.add(c);

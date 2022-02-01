@@ -5,6 +5,7 @@ public class RestaurantBuilder {
     ArrayList<ContenuRestaurant> contenu= new ArrayList<>();
     //ArrayList<Serveur> Serveurs= new ArrayList<>();
     private Cuisine cuisine;
+    private boolean avecCuisine=false;
     private boolean ayantCommenceLeService =false;
 
     public Restaurant Build(){
@@ -12,10 +13,15 @@ public class RestaurantBuilder {
         if (ayantCommenceLeService){
             rest.debuterService();
         }
+        if (avecCuisine){
+            rest.setCuisine(cuisine);
+        }
+
         return rest;
     }
     public RestaurantBuilder AvecCuisine(){
         this.cuisine=new CuisineBuilder().Build();
+        avecCuisine=true;
         return this;
     }
     public RestaurantBuilder avecListeServeur(int nb){
