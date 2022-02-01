@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 
 public class Restaurant {
@@ -6,43 +7,27 @@ public class Restaurant {
     private ArrayList<Serveur> Serveurs;
     private ArrayList<Commande> Commandes;
     private ArrayList<Table> tablesOccupes=new ArrayList<>();
-    //private ArrayList<Serveur> lesServeurs= new ArrayList<>(); //TODO: supprimer et utiliser getServeurs()
-    private ArrayList<ContenuRestaurant> contenuRestaurant;
 
-    public Restaurant(ArrayList<ContenuRestaurant> contenu) {
-        this.contenuRestaurant =  contenu;
-    }
-    /*public Restaurant(ArrayList<Serveur> serveurs) {
+    private ArrayList<Table> listeTables;
+
+
+    public Restaurant(ArrayList<Serveur> serveurs,ArrayList<Table> tables) {
         Serveurs = serveurs;
-    }*/
-    public ArrayList<ContenuRestaurant> getContenu() {
-        return contenuRestaurant;
+        listeTables=tables;
     }
-    /*public ArrayList<Serveur> getServeurs() {
-        return Serveurs;
-    }*/
+
+    //TODO
     public ArrayList<Serveur> getServeurs() {
-        ArrayList<Serveur> serveurs = new ArrayList<>();
-        if (contenuRestaurant.get(0) instanceof Serveur){
-            for(ContenuRestaurant contenu: getContenu()) {
-                serveurs.add((Serveur) contenu);
-            }
-        }
-        return serveurs;
+        return Serveurs;
     }
 
     public void setCuisine(Cuisine cuisine) {
         this.cuisine = cuisine;
     }
-
+    //TODO
     public ArrayList<Table> getTables() {
-        ArrayList<Table> tables = new ArrayList<>();
-        if (contenuRestaurant.get(0) instanceof Table){
-            for(ContenuRestaurant contenu: getContenu()) {
-                tables.add((Table)contenu);
-            }
-        }
-        return tables;
+       return listeTables;
+
     }
 
     public ArrayList<Plat> lesmenus= new ArrayList<>();
@@ -105,16 +90,4 @@ public class Restaurant {
         return cuisine;
     }
 
-    public void AddContenu(ContenuRestaurant c){
-        contenuRestaurant.add(c);
-    }
-    /*public void AddServeur(Serveur s){
-        Serveurs.add(s);
-    }*/
-
-
-    public void ajoutServeur(Serveur serveur) {
-        serveur.setRestaurant(this);
-        this.lesServeurs.add(serveur);
-    }
 }

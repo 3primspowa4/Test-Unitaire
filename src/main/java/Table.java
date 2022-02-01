@@ -1,4 +1,4 @@
-public class Table extends ContenuRestaurant {
+public class Table {
     public MaitreHotel maitreHotel = null;
     public boolean occupe=false;
     public boolean epinglee=false;

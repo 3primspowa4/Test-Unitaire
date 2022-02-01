@@ -34,7 +34,7 @@ public class CommandeTest {
         var serveur= new ServeurBuilder().Build();
         Commande commande = new CommandeBuilder().Build();
         restaurant.setCuisine(cuisine);
-        restaurant.ajoutServeur(serveur);
+        restaurant.AjoutServeur(serveur);
         //QUAND il prend une commande de nourriture
         serveur.prendCommande(commande);
         //ALORS cette commande apparaît dans la liste de tâches de la cuisine de ce restaurant

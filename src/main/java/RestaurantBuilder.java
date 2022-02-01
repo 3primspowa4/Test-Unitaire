@@ -2,14 +2,14 @@ import java.util.ArrayList;
 
 public class RestaurantBuilder {
 
-    ArrayList<ContenuRestaurant> contenu= new ArrayList<>();
     ArrayList<Serveur> Serveurs= new ArrayList<>();
+    ArrayList<Table> tables= new ArrayList<>();
     private Cuisine cuisine;
     private boolean avecCuisine=false;
     private boolean ayantCommenceLeService =false;
 
     public Restaurant Build(){
-        Restaurant rest=new Restaurant(contenu /*Serveurs*/);
+        Restaurant rest=new Restaurant(Serveurs,tables);//TODO
         if (ayantCommenceLeService){
             rest.debuterService();
         }
@@ -26,13 +26,13 @@ public class RestaurantBuilder {
     }
     public RestaurantBuilder avecListeServeur(int nb){
       for (int cpt=0; cpt<nb; cpt++){
-          contenu.add(new ServeurBuilder().Build());
+         Serveurs.add(new ServeurBuilder().Build());
       }
       return this;
     }
     public RestaurantBuilder avecListeTable(int nb){
         for (int cpt=0; cpt<nb; cpt++){
-            contenu.add(new TableBuilder().Build());
+            tables.add(new TableBuilder().Build());
         }
         return this;
     }

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Serveur extends ContenuRestaurant {
+public class Serveur {
     private int CA;
     private ArrayList<Commande> lesCommandes= new ArrayList<>();
     private Restaurant restaurant;
