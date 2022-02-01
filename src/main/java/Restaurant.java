@@ -29,7 +29,15 @@ public class Restaurant {
        return listeTables;
 
     }
-
+    public void tableRemplie(Table table, Client client){
+        tablesOccupes.add(table);
+        table.setOccupe(true);
+        table.clientArrive(client);
+    }
+    public void tableVider(Table table){
+        tablesOccupes.remove(table);
+        table.setOccupe(false);
+    }
     public ArrayList<Plat> lesmenus= new ArrayList<>();
 
 
@@ -76,8 +84,9 @@ public class Restaurant {
     public void setTablesOccupes(ArrayList<Table> tablesOccupes) {
         this.tablesOccupes = tablesOccupes;
     }
-    public  void tableOccupe(Table table){
-        this.tablesOccupes.add(table);
+    public  void tableOccupe(Table table, Client client){
+        table.clientArrive(client);
+        this.listeTables.add(table);
     }
     public void tableLibre(Table table){
         tablesOccupes.remove(table);

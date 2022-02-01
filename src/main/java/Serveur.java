@@ -5,14 +5,18 @@ public class Serveur {
     private ArrayList<Commande> lesCommandes= new ArrayList<>();
     private Restaurant restaurant;
 
+
+
     public int GetCA() {
         return CA;
     }
 
+
     public void prendCommande(Commande commande){
         CA+=commande.getMontant();
-        if(commande.isNourriture())
-            restaurant.getCuisine().ajoutCommande(commande);
+        if(this.restaurant!=null){
+            this.restaurant.getCuisine().ajoutCommande(commande);
+        }
         this.lesCommandes.add(commande);
 
     }

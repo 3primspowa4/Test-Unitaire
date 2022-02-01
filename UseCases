@@ -99,4 +99,5 @@ SCOPE Commande: FAIT
 	ALORS cette commande n'apparaît pas dans la liste de tâches de la cuisine de ce restaurant
 
 
-	test de recette, de test d'inte avec une bdd fictive, test systeme et unitaire
+	Choisir un scope et realisé un test de recette, d'integration(avec fausse bdd de votre choix, qui communique avec l'exterieur), des tests systemes et unitaire
+    dans le readme ecrivez, ce que vous pensez d'une telle stratégie ET comment vous auriez testé ce code

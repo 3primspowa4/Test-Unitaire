@@ -22,9 +22,9 @@ public class TableTest {
         Client client=new ClientBuilder().Build();
         Restaurant restaurant=new RestaurantBuilder().AyantDebuteLeService().Build();
         //  QUAND un client est affecté à une table
-        table.clientArrive(restaurant,client);
 
         //  ALORS cette table n'est plus sur la liste des tables libres du restaurant
+        restaurant.tableRemplie(table, client);
         assertThat(restaurant.getTablesOccupes()).contains(table);
     }
     @Test
@@ -33,12 +33,10 @@ public class TableTest {
         Table table=new TableBuilder().Build();
         Client client=new ClientBuilder().Build();
         Restaurant restaurant=new RestaurantBuilder().AyantDebuteLeService().Build();
-        table.clientArrive(restaurant,client);
+        restaurant.tableRemplie(table, client);
         //QUAND la table est libérée
-        table.clientPart(restaurant);
-
         //ALORS cette table apparaît sur la liste des tables libres du restaurant
+        restaurant.tableVider(table);
         assertThat(restaurant.getTablesOccupes()).doesNotContain(table);
     }
-
 }
