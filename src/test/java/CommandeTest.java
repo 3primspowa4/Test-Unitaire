@@ -26,20 +26,6 @@ public class CommandeTest {
         //ALORS cette commande apparaît dans la liste de tâches de la cuisine de ce restaurant
         assertThat(resto.getCuisine().commandes.contains(commande)).isTrue();
     }
-    //TODO refactor
-    public void listeCommande2() {
-        //ÉTANT DONNE un serveur dans un restaurant
-        Cuisine cuisine = new CuisineBuilder().Build();
-        var restaurant = new RestaurantBuilder().Build();
-        var serveur= new ServeurBuilder().Build();
-        Commande commande = new CommandeBuilder().Build();
-        restaurant.setCuisine(cuisine);
-        restaurant.AjoutServeur(serveur);
-        //QUAND il prend une commande de nourriture
-        serveur.prendCommande(commande);
-        //ALORS cette commande apparaît dans la liste de tâches de la cuisine de ce restaurant
-        assertThat(cuisine.commandes.contains(commande)).isTrue();
-    }
 
     @Test
     public void commandeBoisson() {
