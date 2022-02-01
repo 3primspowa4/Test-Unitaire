@@ -3,24 +3,48 @@ import java.util.ArrayList;
 public class Restaurant {
     private Cuisine cuisine;
     private String Statut;
-    private ArrayList<Serveur> Serveurs;
+    private ArrayList<Serveur> Serveurs; //TODO: supprimer et utiliser getServeurs()
     private ArrayList<Commande> Commandes;
     private ArrayList<Table> tablesOccupes=new ArrayList<>();
-    private ArrayList<Serveur> lesServeurs= new ArrayList<>();
+    private ArrayList<Serveur> lesServeurs= new ArrayList<>(); //TODO: supprimer et utiliser getServeurs()
+    private ArrayList<ContenuRestaurant> contenuRestaurant;
 
-
-    public Restaurant(ArrayList<Serveur> serveurs) {
+    public Restaurant(ArrayList<ContenuRestaurant> contenu) {
+        this.contenuRestaurant =  contenu;
+    }
+    /*public Restaurant(ArrayList<Serveur> serveurs) {
         Serveurs = serveurs;
-
+    }*/
+    public ArrayList<ContenuRestaurant> getContenu() {
+        return contenuRestaurant;
+    }
+    /*public ArrayList<Serveur> getServeurs() {
+        return Serveurs;
+    }*/
+    public ArrayList<Serveur> getServeurs() {
+        ArrayList<Serveur> serveurs = new ArrayList<>();
+        if (contenuRestaurant.get(0) instanceof Serveur){
+            for(ContenuRestaurant contenu: getContenu()) {
+                serveurs.add((Serveur) contenu);
+            }
+        }
+        return serveurs;
     }
 
     public void setCuisine(Cuisine cuisine) {
         this.cuisine = cuisine;
     }
 
-    public ArrayList<Serveur> getServeurs() {
-        return Serveurs;
+    public ArrayList<Table> getTables() {
+        ArrayList<Table> tables = new ArrayList<>();
+        if (contenuRestaurant.get(0) instanceof Table){
+            for(ContenuRestaurant contenu: getContenu()) {
+                tables.add((Table)contenu);
+            }
+        }
+        return tables;
     }
+
     public ArrayList<Plat> lesmenus= new ArrayList<>();
 
 
@@ -80,9 +104,13 @@ public class Restaurant {
         return cuisine;
     }
 
-    public ArrayList<Serveur> getLesServeurs() {
-        return lesServeurs;
+    public void AddContenu(ContenuRestaurant c){
+        contenuRestaurant.add(c);
     }
+    /*public void AddServeur(Serveur s){
+        Serveurs.add(s);
+    }*/
+
 
     public void ajoutServeur(Serveur serveur) {
         serveur.setRestaurant(this);
