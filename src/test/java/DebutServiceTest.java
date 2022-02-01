@@ -17,18 +17,32 @@ public class DebutServiceTest {
             Assertions.assertEquals(maitreHotel, table.maitreHotel);
         }
     }
-    /*
+
     @Test
     public void tester2(){
         //ÉTANT DONNÉ un restaurant ayant 3 tables dont une affectée à un serveur
         RestaurantBuilder restaurantBuilder = new RestaurantBuilder().avecListeTable(3);
         Serveur serveur1 = new ServeurBuilder().Build();
-        Table table1 = new TableBuilder().Build();
-        table1.affecter(serveur1);
+        Table tableAffectee = restaurantBuilder.tables.get(0);
+        Table tableNonAffectee1 = restaurantBuilder.tables.get(1);
+        Table tableNonAffectee2 = restaurantBuilder.tables.get(2);
+        restaurantBuilder.tables.get(0).affecter(serveur1);
         //QUAND le service débute
+        Restaurant restaurant = restaurantBuilder.AyantDebuteLeService().Build();
+        //ALORS la table precedement affectée est encore affectée au serveur
+        // et les deux autres au maître d'hôtel
+        Assertions.assertEquals(serveur1, tableAffectee.serveur);
+        Assertions.assertEquals(maitreHotel, tableNonAffectee1.maitreHotel);
 
-        //ALORS la table éditée est affectée au serveur et les deux autres au maître d'hôte
     }
 
-    */
+    @Test
+    public void tester3() {
+        //ÉTANT DONNÉ un restaurant ayant 3 tables dont une affectée à un serveur
+
+        //QUAND le service débute
+
+        //ALORS il n'est pas possible de modifier le serveur affecté à la table
+    }
+
 }

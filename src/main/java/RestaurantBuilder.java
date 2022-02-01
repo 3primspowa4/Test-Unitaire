@@ -9,7 +9,7 @@ public class RestaurantBuilder {
     private boolean ayantCommenceLeService =false;
 
     public Restaurant Build(){
-        Restaurant rest=new Restaurant(Serveurs,tables);//TODO
+        Restaurant rest=new Restaurant(Serveurs,tables);
         if (ayantCommenceLeService){
             rest.debuterService();
         }
