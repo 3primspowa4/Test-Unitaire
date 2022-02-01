@@ -1,10 +1,5 @@
 import java.util.ArrayList;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import java.util.ArrayList;
-
 public class Restaurant {
     private Cuisine cuisine;
     private String Statut;
