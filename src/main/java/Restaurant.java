@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class Restaurant {
     private Cuisine cuisine;
     private String Statut;
-    private ArrayList<Serveur> Serveurs; //TODO: supprimer et utiliser getServeurs()
+    private ArrayList<Serveur> Serveurs;
     private ArrayList<Commande> Commandes;
     private ArrayList<Table> tablesOccupes=new ArrayList<>();
-    private ArrayList<Serveur> lesServeurs= new ArrayList<>(); //TODO: supprimer et utiliser getServeurs()
+    //private ArrayList<Serveur> lesServeurs= new ArrayList<>(); //TODO: supprimer et utiliser getServeurs()
     private ArrayList<ContenuRestaurant> contenuRestaurant;
 
     public Restaurant(ArrayList<ContenuRestaurant> contenu) {

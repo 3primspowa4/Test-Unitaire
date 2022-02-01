@@ -97,3 +97,6 @@ SCOPE Commande: FAIT
 	ÉTANT DONNE un serveur dans un restaurant
 	QUAND il prend une commande de boissons
 	ALORS cette commande n'apparaît pas dans la liste de tâches de la cuisine de ce restaurant
+
+
+	test de recette, de test d'inte avec une bdd fictive, test systeme et unitaire

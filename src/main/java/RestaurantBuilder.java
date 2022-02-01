@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class RestaurantBuilder {
 
     ArrayList<ContenuRestaurant> contenu= new ArrayList<>();
-    //ArrayList<Serveur> Serveurs= new ArrayList<>();
+    ArrayList<Serveur> Serveurs= new ArrayList<>();
     private Cuisine cuisine;
     private boolean avecCuisine=false;
     private boolean ayantCommenceLeService =false;
