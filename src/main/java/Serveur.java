@@ -14,7 +14,9 @@ public class Serveur {
 
     public void prendCommande(Commande commande){
         CA+=commande.getMontant();
-        restaurant.getCuisine().ajoutCommande(commande);
+        if(this.restaurant!=null){
+            this.restaurant.getCuisine().ajoutCommande(commande);
+        }
         this.lesCommandes.add(commande);
 
     }
