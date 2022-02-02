@@ -4,19 +4,24 @@ import java.util.ArrayList;
 public class Restaurant {
     private Cuisine cuisine;
     private String Statut;
+    private MaitreHotel maitreHotel;
     private ArrayList<Serveur> Serveurs;
     private ArrayList<Commande> Commandes;
     private ArrayList<Table> tablesOccupes=new ArrayList<>();
-
     private ArrayList<Table> listeTables;
+
 
 
     public Restaurant(ArrayList<Serveur> serveurs,ArrayList<Table> tables) {
         Serveurs = serveurs;
         listeTables=tables;
+        maitreHotel = new MaitreHotel();
     }
 
-    //TODO
+    public MaitreHotel getMaitreHotel() {
+        return maitreHotel;
+    }
+
     public ArrayList<Serveur> getServeurs() {
         return Serveurs;
     }
@@ -24,7 +29,7 @@ public class Restaurant {
     public void setCuisine(Cuisine cuisine) {
         this.cuisine = cuisine;
     }
-    //TODO
+
     public ArrayList<Table> getTables() {
        return listeTables;
 
@@ -93,6 +98,18 @@ public class Restaurant {
     }
 
     public void debuterService() {
+        for ( Table table : this.listeTables ){
+            if (table.getResponsable() == null){
+                table.affecter(maitreHotel);
+            }
+        }
+    }
+    public void terminerService() {
+        for ( Table table : this.listeTables ){
+            if (table.getResponsable() == null){
+                table.affecter(maitreHotel);
+            }
+        }
     }
 
     public Cuisine getCuisine() {

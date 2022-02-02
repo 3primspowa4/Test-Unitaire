@@ -1,2 +1,2 @@
-public class MaitreHotel {
+public class MaitreHotel extends Employe{
 }
