@@ -8,6 +8,15 @@ public class RestaurantBuilder {
     private boolean avecCuisine=false;
     private boolean ayantCommenceLeService =false;
 
+    public void setAyantCommenceLeService(boolean ayantCommenceLeService) {
+        this.ayantCommenceLeService = ayantCommenceLeService;
+    }
+
+    public boolean isAyantCommenceLeService() {
+        return ayantCommenceLeService;
+    }
+
+
     public Restaurant Build(){
         Restaurant rest=new Restaurant(Serveurs,tables);
         if (ayantCommenceLeService){
@@ -33,6 +42,7 @@ public class RestaurantBuilder {
     public RestaurantBuilder avecListeTable(int nb){
         for (int cpt=0; cpt<nb; cpt++){
             tables.add(new TableBuilder().Build());
+            tables.get(cpt).setRestaurantBuilder(this);
         }
         return this;
     }
