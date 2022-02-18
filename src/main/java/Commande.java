@@ -7,6 +7,10 @@ public class Commande {
     private boolean marquee=false;
     private boolean transmise=false;
 
+    public Commande(int montant) {
+        this.montant = montant;
+    }
+
     public boolean isNourriture() {
         return nourriture;
     }

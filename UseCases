@@ -1,6 +1,6 @@
 SCOPE Chiffre d'Affaires
 
-	SCOPE Serveur
+	SCOPE Serveur: FAIT
 
 		ÉTANT DONNÉ un nouveau serveur
 		QUAND on récupére son chiffre d'affaires
@@ -14,14 +14,14 @@ SCOPE Chiffre d'Affaires
 		QUAND il prend une nouvelle commande
 		ALORS son chiffre d'affaires est la somme des deux commandes
 
-	SCOPE Restaurant
+	SCOPE Restaurant: FAIT
 		ÉTANT DONNÉ un restaurant ayant X serveurs
 		QUAND tous les serveurs prennent une commande d'un montant Y
 		ALORS le chiffre d'affaires de la franchise est X * Y
 		CAS(X = 0; X = 1; X = 2; X = 100)
 		CAS(Y = 1.0)
 
-	SCOPE Franchise
+	SCOPE Franchise :FAIT
 		ÉTANT DONNÉ une franchise ayant X restaurants de Y serveurs chacuns
 		QUAND tous les serveurs prennent une commande d'un montant Z
 		ALORS le chiffre d'affaires de la franchise est X * Y * Z
@@ -97,3 +97,7 @@ SCOPE Commande: FAIT
 	ÉTANT DONNE un serveur dans un restaurant
 	QUAND il prend une commande de boissons
 	ALORS cette commande n'apparaît pas dans la liste de tâches de la cuisine de ce restaurant
+
+
+	Choisir un scope et realisé un test de recette, d'integration(avec fausse bdd de votre choix, qui communique avec l'exterieur), des tests systemes et unitaire
+    dans le readme ecrivez, ce que vous pensez d'une telle stratégie ET comment vous auriez testé ce code

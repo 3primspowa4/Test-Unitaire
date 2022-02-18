@@ -3,6 +3,15 @@ import java.util.ArrayList;
 public class Franchise {
     private int CA=0;
     private ArrayList<Restaurant> listResto;
+
+    public Franchise(ArrayList<Restaurant> listResto) {
+        this.listResto = listResto;
+    }
+
+    public ArrayList<Restaurant> getListResto() {
+        return listResto;
+    }
+
     ArrayList<Plat> lesplats = new ArrayList<>();
     public void ajoutMenu(Plat plat){
         var menu = new Menu();
