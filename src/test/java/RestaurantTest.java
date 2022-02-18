@@ -9,7 +9,6 @@ public class RestaurantTest {
     @CsvSource({"0,1","1,1","2,1","100,1"})
     public void caRestaurant(int x, int y){
 //    ÉTANT DONNÉ un restaurant ayant X serveurs
-        int result = x*y;
         Restaurant restaurant = new RestaurantBuilder()
                                     .avecListeServeur(x)
                                     .Build();
@@ -21,13 +20,12 @@ public class RestaurantTest {
             F1.setCA(C1.getMontant());
         }
 //	ALORS le chiffre d'affaires de la franchise est X * Y
-       assertEquals(result,F1.getCA());
+       assertEquals(x*y,F1.getCA());
     }
     @ParameterizedTest
     @CsvSource({"0,0,1","1,1,1","2,2,1","1000,1000,1"})
     public void caFranchise(int x,int y,int z){
         //ÉTANT DONNÉ une franchise ayant X restaurants de Y serveurs chacuns
-        int result = x*y*z;
         Restaurant restaurant = new RestaurantBuilder().avecListeServeur(y).Build();
         Commande C1=new CommandeBuilder().Build();
         Franchise F1=new FranchiseBuilder().avecListeRestaurant(x).Build();
@@ -38,8 +36,7 @@ public class RestaurantTest {
                 F1.setCA(C1.getMontant());
             }
         }
-
         //ALORS le chiffre d'affaires de la franchise est X * Y * Z
-        assertEquals(result,F1.getCA());
+        assertEquals(x*y*z,F1.getCA());
     }
 }
