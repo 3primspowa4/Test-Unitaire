@@ -9,7 +9,7 @@ public class RestaurantTest {
     @ParameterizedTest
     @CsvSource({"0,1","1,1","2,1","100,1"})
     public void CA_resto(int x, int y){
-//    ÉTANT DONNÉ un restaurant ayant X serveurs ah
+//    ÉTANT DONNÉ un restaurant ayant X serveurs
         int result = x*y;
         Restaurant restaurant = new RestaurantBuilder()
                                     .avecListeServeur(x)
