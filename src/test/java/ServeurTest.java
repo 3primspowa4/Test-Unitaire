@@ -42,6 +42,7 @@ public class ServeurTest {
     @Test
     public void testPerformanceAjoutCAserveur(){
         long startTime = System.currentTimeMillis();
+        // oui
         ajoutCAserveur();
         long finishTime = System.currentTimeMillis();
         System.out.println("That took: " + (finishTime - startTime) + " ms");
