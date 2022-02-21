@@ -39,6 +39,13 @@ public class ServeurTest {
         assertEquals(36,serveur.GetCA());
 
     }
+    @Test
+    public void testPerformanceAjoutCAserveur(){
+        long startTime = System.currentTimeMillis();
+        ajoutCAserveur();
+        long finishTime = System.currentTimeMillis();
+        System.out.println("That took: " + (finishTime - startTime) + " ms");
+    }
     //scope installation
     @Test
     public void tableOccupe(){
