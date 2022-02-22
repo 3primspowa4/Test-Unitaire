@@ -40,6 +40,10 @@ public class ServeurTest {
 
     }
     @Test
+    public void testBidon(){
+        assertEquals(36,4);
+    }
+    @Test
     public void testPerformanceAjoutCAserveur(){
         long startTime = System.currentTimeMillis();
         ajoutCAserveur();
