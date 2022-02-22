@@ -39,10 +39,10 @@ public class ServeurTest {
         assertEquals(36,serveur.GetCA());
 
     }
-    @Test
+   /* @Test
     public void testBidon(){
         assertEquals(36,5);
-    }
+    }*/
     @Test
     public void testPerformanceAjoutCAserveur(){
         long startTime = System.currentTimeMillis();
