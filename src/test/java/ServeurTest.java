@@ -41,7 +41,7 @@ public class ServeurTest {
     }
     @Test
     public void testBidon(){
-        assertEquals(36,4);
+        assertEquals(36,5);
     }
     @Test
     public void testPerformanceAjoutCAserveur(){
