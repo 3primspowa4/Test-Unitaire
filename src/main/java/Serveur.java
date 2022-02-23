@@ -28,4 +28,8 @@ public class Serveur extends Employe{
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
     }
+
+    public ArrayList<Commande> getCommande() {
+        return lesCommandes;
+    }
 }
