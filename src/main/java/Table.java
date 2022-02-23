@@ -1,13 +1,25 @@
 import java.util.ArrayList;
 
 public class Table {
-    public MaitreHotel maitreHotel = null;
+    private Employe responsable;
+    private RestaurantBuilder restaurantBuilder;
     private boolean occupe=false;
     public boolean epinglee=false;
     private ArrayList<Client> lesclients = new ArrayList<>();
 
-    public void affecter(MaitreHotel maitreHotel) {
-        this.maitreHotel = maitreHotel;
+    public Employe getResponsable() {
+        return responsable;
+    }
+
+    public void affecter(Employe employe) {
+
+        if ( restaurantBuilder.isAyantCommenceLeService() ){
+            if (!(this.responsable instanceof Serveur))
+                this.responsable = employe;
+        }
+        else {
+            this.responsable = employe;
+        }
     }
 
     public void clientPart(){
@@ -29,5 +41,9 @@ public class Table {
     public void setOccupe(boolean occupe) {
         this.occupe = occupe;
 
+    }
+
+    public void setRestaurantBuilder(RestaurantBuilder restaurantBuilder) {
+        this.restaurantBuilder = restaurantBuilder;
     }
 }
