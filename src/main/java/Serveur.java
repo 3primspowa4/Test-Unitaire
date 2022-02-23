@@ -28,4 +28,8 @@ public class Serveur {
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
     }
+
+    public ArrayList<Commande> getCommande() {
+        return lesCommandes;
+    }
 }
