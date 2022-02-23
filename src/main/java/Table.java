@@ -5,6 +5,7 @@ public class Table {
     private RestaurantBuilder restaurantBuilder;
     private boolean occupe=false;
     public boolean epinglee=false;
+
     private ArrayList<Client> lesclients = new ArrayList<>();
 
     public Employe getResponsable() {
