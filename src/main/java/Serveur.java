@@ -5,8 +5,7 @@ public class Serveur extends Employe{
     private ArrayList<Commande> lesCommandes= new ArrayList<>();
     private Restaurant restaurant;
 
-
-
+    
     public int GetCA() {
         return CA;
     }

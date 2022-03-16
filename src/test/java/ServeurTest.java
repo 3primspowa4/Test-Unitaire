@@ -39,16 +39,7 @@ public class  ServeurTest {
         assertThat(36).isEqualTo(serveur.GetCA());
 
     }
-    //Tests unitaires
-    @Test
-    public void testServeur() {
-        Commande commande1 = new CommandeBuilder().Build();
-        Serveur serveur1 = new ServeurBuilder().Build();
-        serveur1.prendCommande(commande1);
-        ArrayList<Commande> commandes=serveur1.getCommande();
-        assertThat(commande1).isEqualTo(commandes.get(0));
-        assertThat(commande1.getMontant()).isEqualTo(serveur1.GetCA());
-    }
+
 
     @Test
     public void testRecetteAjoutCaServeur(){
@@ -90,5 +81,23 @@ public class  ServeurTest {
         }
         assertThat(525).isEqualTo(serveur1.GetCA());
         assertThat(425).isEqualTo(serveur2.GetCA());
+    }
+
+    //Tests unitaires
+    @Test
+    public void testServeurCommande() {
+        Commande commande1 = new CommandeBuilder().Build();
+        Serveur serveur1 = new ServeurBuilder().Build();
+        serveur1.prendCommande(commande1);
+        ArrayList<Commande> commandes=serveur1.getCommande();
+        assertThat(commande1).isEqualTo(commandes.get(0));
+
+    }
+    @Test
+    public void testServeurCA() {
+        Commande commande1 = new CommandeBuilder().Build();
+        Serveur serveur1 = new ServeurBuilder().Build();
+        serveur1.prendCommande(commande1);
+        assertThat(commande1.getMontant()).isEqualTo(serveur1.GetCA());
     }
 }
