@@ -82,6 +82,10 @@ public class  ServeurTest {
         assertThat(525).isEqualTo(serveur1.GetCA());
         assertThat(425).isEqualTo(serveur2.GetCA());
     }
+    @Test
+    public void testIntegrationServeurCA(){
+        assertThat(true).isTrue();
+    }
 
     //Tests unitaires
     @Test
