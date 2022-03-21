@@ -1,5 +1,8 @@
+import Database.Fonction;
 import org.junit.jupiter.api.Test;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.*;
@@ -84,8 +87,19 @@ public class  ServeurTest {
     }
     @Test
     public void testIntegrationServeurCA(){
-        assertThat(true).isTrue();
+        try{
+            Fonction fonc = new Fonction();
+            Statement st= fonc.connexionSQL();
+            String query ="SELECT * FROM serveur where nom='rogier'";
+            final ResultSet rs=st.executeQuery(query);
+            if(rs.next()){
+                assertThat(true).isTrue();
+            }
+    }catch (Exception e){
+        e.printStackTrace();
     }
+    }
+
 
     //Tests unitaires
     @Test
