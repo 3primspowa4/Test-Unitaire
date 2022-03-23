@@ -86,7 +86,19 @@ public class  ServeurTest {
         assertThat(425).isEqualTo(serveur2.GetCA());
     }
     @Test
+    public void testCo(){
+        //marche pas
+        try{
+            Fonction fonc = new Fonction();
+            Statement st= fonc.connexionSQL();
+            System.out.println(st);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    @Test
     public void testIntegrationServeurCA(){
+        //marche pas
         try{
             Fonction fonc = new Fonction();
             Statement st= fonc.connexionSQL();
