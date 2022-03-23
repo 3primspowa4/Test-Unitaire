@@ -29,7 +29,7 @@ SCOPE Chiffre d'Affaires
 		CAS(Y = 0; Y = 1; Y = 2; Y = 1000)
 		CAS(Z = 1.0)
 
-SCOPE DebutService
+SCOPE DebutService :FAIT
 	ÉTANT DONNE un restaurant ayant 3 tables
 	QUAND le service commence
 	ALORS elles sont toutes affectées au Maître d'Hôtel
